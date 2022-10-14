@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery.min.js"></script>
+</head>
+<body>
+  <div class="nav">123</div>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <ol>
+      <li>4</li>
+      <li>5</li>
+    </ol>
+  </ul>
+  <script>
+    $(function() {
+      console.log( $('.nav'))  // 获取到div这个DOM元素 
+      console.log($('ul li'))  // 后代选择器，获取到ul的所有li，包括ol里面的li
+      console.log($('ul>li'))  // 亲儿子选择器，只获取到自己的儿子3个li，ol里的li获取不到
+      // 使用隐式迭代把匹配的所有元素内部进行循环遍历，给每一个元素添加css这个方法
+      $('li').css('backgroundColor','green')
+    })
+    // 原生JS里面需要通过循环来改变每个元素中的样式
+    // var lis = document.querySelector('ul').querySelectorAll('li')
+    // for (var i = 0; i < lis.length; i++) {
+    //   lis[i].style.backgroundColor = 'pink'
+    // }
+  </script>
+</body>
+</html>

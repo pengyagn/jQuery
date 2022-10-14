@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery.min.js"></script>
+</head>
+<body>
+  <!-- <div class="father">
+    <span class="son">我是儿子</span>
+  </div>
+  <ul class="nav">
+    <li>我是ul的li</li>
+    <li>我是ul的li</li>
+    <ol>
+      <li>我是ol的li</li>
+      <li>我是ol的li</li>
+    </ol>
+  </ul> -->
+  <ul>
+    <li>我是li</li>
+    <li class="item">我是li</li>
+    <li>我是li</li>
+    <li>我是li</li>
+  </ul>
+  <!-- <script>
+    $(function() {
+      console.log($('.son').parent())  // 查找父级，拿到父级的DOM
+      $('.nav').children('li').css('color','red') // 相当于$('.nav>li').css('color','red') 亲儿子选择器，孙子级别的li拿不到
+      // $('.nav').find('li').css('color','blue') // 相当于后代选择器 $('.nav li') 可以拿到ul下的所有li
+    })
+  </script> -->
+  <script>
+    $(function() {
+      $('.item').siblings('li').css('color','red') // 除了当前li的其他兄弟li颜色改为红色
+      $('ul li').eq(3).css('color','blue') // 索引为3的li颜色改为blue
+    })
+  </script>
+</body>
+</html>

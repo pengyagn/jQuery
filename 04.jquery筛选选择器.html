@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery.min.js"></script>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <ol>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ol>
+  <script>
+    $(function() {
+      $('ul li:first').css('color','red')  // 将ul的第一个li颜色改为red
+      $('ul li:last').css('color','green') // 将ul的最后一个li颜色改为green
+      $('ul li:eq(1)').css('color','blue') // 将ul的索引为1的li颜色改为blue
+      $('ol li:odd').css('color','cyan')   // 将ol的索引为奇数的li颜色改为cyan
+      $('ol li:even').css('color', 'purple') // 将ol的索引为偶数的li颜色改为purple
+    })
+  </script>
+</body>
+</html>
