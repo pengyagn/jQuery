@@ -126,14 +126,34 @@
         </li>
     </ul>
     <script>
-      $(function() {
-        $('ul>li').mouseover(function() {
-          $(this).children('ul').show()
-        }) 
-        $('ul>li').mouseout(function() {
-          $(this).children('ul').hide()
+    //   $(function() {
+    //     $('ul>li').mouseover(function() {
+    //       $(this).children('ul').show()
+    //     }) 
+    //     $('ul>li').mouseout(function() {
+    //       $(this).children('ul').hide()
+    //     })
+    //   })
+        // $(function() {
+        //     $('ul>li').mouseover(function() {
+        //         $(this).children('ul').slideDown()
+        //     })
+        //     $('ul>li').mouseout(function() {
+        //         $(this).children('ul').slideUp()
+        //     })
+        // })
+        // $(function() {
+        //     $('ul>li').hover(function() {
+        //         $(this).children('ul').slideDown()
+        //     },function() {
+        //         $(this).children('ul').slideUp()
+        //     })
+        // })
+        $(function() {
+            $('ul>li').hover(function() {
+                $(this).children('ul').stop().slideToggle()
+            })
         })
-      })
     </script>
 </body>
 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery.min.js"></script>
+</head>
+<body>
+  <input type="text" checked index="1" data-index="111">
+  <script>
+    $(function() {
+      // 1.Element.prop("属性名") 获取元素的固有的属性值
+      console.log($('input').prop('type'))
+      // prop("属性名","值") 设置元素固有属性的值
+      $('input').prop('type','password')
+      console.log($('input').prop('type'))
+      console.log('--------------------------------')
+      // 2.元素的自定义属性，我们通过attr()
+      // 自定义属性如果通过prop来获取的话获取到的是undefined
+      console.log($('input').prop('index'))
+      console.log($('input').attr('index'))
+      $('input').attr('index', 3)
+      console.log($('input').attr('index'))
+      // 获取data-index自定义属性
+      console.log($('input').attr('data-index'))
+      console.log('--------------------------------')
+      // 3.数据缓存 data() 这个里面的数据是存放在元素的内存里面
+      $('input').data('uname','andy')  // 通过检查在元素上是看不到uname这个自定义属性的，因为存放在内存里
+      console.log($('input').data('uname')) // 但是打印可以打印出来
+      // 这个方法获取data-index h5自定义属性，不用写data-，而且返回的是数字型，attr获取data-返回的是字符串型
+      console.log($('input').data('index'))
+    })
+  </script>
+</body>
+</html>
