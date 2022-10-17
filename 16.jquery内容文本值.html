@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery.min.js"></script>
+</head>
+<body>
+  <div>
+    <span>我是内容</span>
+  </div>
+  <input type="text" value="请输入内容">
+  <script>
+    $(function() {
+      // 普通元素内容 html()
+      console.log($("div").html())
+      $("div").html('修改元素的内容')
+      // 普通元素文本内容 text() 
+      console.log($("div").text())  // 只获取内容，不会获取到html标签
+      // 表单的值 val()
+      console.log($("input").val())  // 获取input中value的值
+      $("input").val("修改表单的内容") // 相当于修改元素的value属性的值
+    })
+  </script>
+</body>
+</html>

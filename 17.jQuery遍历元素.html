@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery.min.js"></script>
+</head>
+<body>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <script>
+    $(function() {
+      // $("div").css("color","red") // 隐式迭代，将div中文字改为红色
+      // 隐式迭代缺点：不能循环对每个元素单独操作，例如将第一个div颜色改为红色，第二个div颜色改为蓝色等
+      // 解决方法：$.each遍历
+      var arr = ['red', 'blue', 'green']
+      var sum = 0
+      $("div").each(function(index,domEle) {
+        $(domEle).css("color", arr[index])
+        sum += parseInt($(domEle).html())
+      })
+      console.log(sum)
+      // 遍历arr $.each()方法可用于遍历任何对象。主要用于数据处理，比如数组，对象
+      $.each({'name': 'andy','age':12},function(index,Element) {
+        console.log(index)
+        console.log(Element)
+      })
+    })
+    
+  </script>
+</body>
+</html>

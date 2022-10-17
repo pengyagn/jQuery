@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery.min.js"></script>
+</head>
+<body>
+  <ul>
+    <li>我是原先的li</li>
+  </ul>
+  <div>我是原先的div</div>
+  <script>
+    $(function() {
+      // 1.创建元素
+      var li = $("<li>我是后创建的li</li>")
+
+      // 2.内部添加（添加的节点和指定节点是父子关系）
+      // $("ul").append(li)  // 内部添加并且放到内容的最后面  
+      $("ul").prepend(li)    // 内部添加并且放到内容的最前面
+
+      // 3.外部添加（添加的节点和指定节点是兄弟关系）
+      var div = $("<div>我是后创建的div</div>")
+      // $("div").before(div)  // 添加到指定节点前面，和其是兄弟关系
+      $("div").after(div)      // 添加到指定节点后面
+
+      // 4.删除元素
+      // $("ul").remove()   // 删除指定的元素，包括其自身和后代
+      // $("ul").empty()       // 只删除其后低，其本身还在
+      // $("ul").html("")      // 作用和empty一样
+    })
+  </script>
+</body>
+</html>
