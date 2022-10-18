@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery.min.js"></script>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: skyblue;
+    }
+    .current {
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <script>
+    $(function() {
+      // 1.单个事件注册
+      // $("div").click(function() {
+      //   $(this).css("backgroundColor","pink")
+      // })
+      // $("div").mouseenter(function() {
+      //   $(this).css("backgroundColor","red")
+      // })
+      // $("div").mouseleave(function() {
+      //   $(this).css("backgroundColor","blue")
+      // })
+      // 2.事件处理on绑定事件
+      // on方法绑定事件优势1：可以绑定多个事件，多个处理事件处理程序。(事件处理程序不一样)
+        // $("div").on({
+        //   click: function() {
+        //     $(this).css("backgroundColor","pink")
+        //   },
+        //   mouseenter: function() {
+        //     $(this).css("backgroundColor","red")
+        //   },
+        //   mouseleave: function() {
+        //     $(this).css("backgroundColor","blue")
+        //   }
+        // })
+      // 优势2：事件处理程序一样时
+          $("div").on("mouseenter mouseleave",function() {
+            $("div").toggleClass("current")
+          })
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery.min.js"></script>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <ul>
+    <li>我是li</li>
+    <li>我是li</li>
+    <li>我是li</li>
+  </ul>
+  <p>我是p标签</p>
+  <script>
+    $(function() {
+      $("div").on({
+        click: function() {
+          $("div").css("backgroundColor","skyblue")
+        },
+        mouseenter: function() {
+          $("div").css("backgroundColor","red")
+        }
+      })
+      $("ul").on("click","li",function() {
+        alert(11)
+      })
+      // 1.事件解绑off
+      // $("div").off()  //解除div身上的所有事件
+      $("div").off("click")  // 解除div身上的点击事件
+      $("ul").off("click","li") // 解除ul的事件委托
+      // 2.one() 只能触发一次事件
+      $("p").one("click",function() {
+        alert("我只触发一次")
+      })
+    })
+  </script>
+</body>
+</html>

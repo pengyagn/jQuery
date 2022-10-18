@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery.min.js"></script>
+  <style></style>
+</head>
+<body>
+  <ul>
+    <li>我是li</li>
+    <li>我是li</li>
+    <li>我是li</li>
+  </ul>
+  <ol></ol>
+  <script>
+    $(function() {
+      // on的第二个优势：事件委托
+      $("ul").on("click","li", function() {
+        alert(11)
+      })
+      // on的第三个优势：可以给未来动态创建的元素绑定事件
+      // $("ol li").click(function() {
+      //   alert(11)
+      // })  // 利用之前的写法是不会弹出11的
+      // 利用on绑定的事件可以正常弹出，说明on可以给未来创建的事件绑定事件
+      $("ol").on("click","li",function() {
+        alert(11)
+      })
+      var li = $("<li>我是后来创建的</li>")
+      $("ol").append(li)
+    })
+  </script>
+</body>
+</html>
